@@ -1,0 +1,29 @@
+# Render.com blueprint: New + > Blueprint > pick your GitHub repo
+services:
+  - type: web
+    name: study-hub
+    runtime: node
+    plan: starter            # a persistent disk needs a paid plan
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: API_KEY
+        generateValue: true
+      - key: DATA_DIR
+        value: /var/data
+      - key: INITIAL_OWNER_USERNAME
+        value: heng
+      - key: INITIAL_OWNER_NAME
+        value: Heng
+      - key: INITIAL_OWNER_PASSWORD
+        sync: false          # set privately in Render; used only to initialize/migrate the owner
+      - key: LEGACY_OWNER_PASSWORD
+        sync: false          # set privately only to migrate an existing owner password
+      - key: PUBLIC_URL
+        sync: false          # set to https://YOUR-APP.onrender.com after first deploy
+      - key: WEBHOOK_URL
+        sync: false
+    disk:
+      name: study-hub-data
+      mountPath: /var/data
+      sizeGB: 5

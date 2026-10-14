@@ -1,0 +1,57 @@
+:root{--bg:#f6f7fb;--card:#fff;--tx:#1d2433;--mu:#6b7385;--ac:#4f46e5;--bd:#e3e6ee;--red:#dc2626}
+@media(prefers-color-scheme:dark){:root{--bg:#12141c;--card:#1b1e29;--tx:#eceef5;--mu:#9aa1b5;--ac:#7c83ff;--bd:#2b3042}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+button,input{font:inherit}
+.btn{background:var(--ac);color:#fff;border:0;padding:9px 14px;border-radius:9px;cursor:pointer}
+.btn.g{background:transparent;color:var(--tx);border:1px solid var(--bd)}
+.btn.r{background:var(--red)}
+.btn.s{padding:3px 7px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+input[type=text],input[type=password],textarea{padding:10px;border:1px solid var(--bd);border-radius:9px;background:var(--card);color:var(--tx);width:100%;font:inherit}
+select{font:inherit;padding:9px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx);min-width:0}
+.password-field{display:flex;gap:8px;align-items:stretch;width:100%}
+.password-field input{display:block;width:0;min-width:0;flex:1;touch-action:manipulation}
+.password-toggle{flex:0 0 auto}
+label[for=u],label[for=p],label[for=role]{font-size:14px;font-weight:600}
+header{display:flex;gap:10px;align-items:center;padding:12px 16px;background:var(--card);border-bottom:1px solid var(--bd);flex-wrap:wrap}
+header h1{font-size:18px;margin:0;flex:1}
+.wrap{display:grid;grid-template-columns:320px 1fr;gap:16px;padding:16px;max-width:1300px;margin:auto}
+@media(max-width:800px){.wrap{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px}
+.item{display:flex;gap:6px;align-items:center;padding:9px;border-radius:9px;cursor:pointer;border:1px solid transparent}
+.item:hover,.item.on{border-color:var(--ac)}
+.item .t{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mu{color:var(--mu);font-size:13px}
+.viewer{min-height:60vh;display:flex;flex-direction:column;gap:10px}
+.viewer iframe,.viewer video,.viewer embed{width:100%;height:70vh;border:1px solid var(--bd);border-radius:10px;background:#fff}
+.viewer img{max-width:100%;border-radius:10px}
+.caption{white-space:pre-wrap;font-size:15px}
+.login{max-width:380px;margin:12vh auto;display:flex;flex-direction:column;gap:12px}
+.demo-notice{padding:8px 16px;background:var(--bg);color:var(--mu);border-bottom:1px solid var(--bd);font-size:13px;text-align:center}
+.demo-notice b{color:var(--tx)}
+.account-admin{margin-top:12px}
+.exercise-create,.exercise-list-card{margin-top:12px}
+.exercise-create h2,.exercise-heading{font-size:17px;margin:0}
+.exercise-item{display:flex;flex-direction:column;gap:3px;align-items:flex-start;width:100%;padding:9px;margin-top:5px;border:1px solid transparent;border-radius:8px;background:transparent;color:var(--tx);text-align:left;cursor:pointer}
+.exercise-item:hover,.exercise-item.on{border-color:var(--ac)}
+.exercise-title{font-weight:600}
+.answers-form{display:grid;gap:12px}
+.answer-question{display:grid;gap:6px}
+.submission{padding:12px 0;border-top:1px solid var(--bd);overflow-wrap:anywhere}
+.submission p{white-space:pre-wrap}
+.account-admin h2{font-size:17px;margin:0}
+.user-form{display:grid;gap:10px;margin:12px 0}
+.user-form label,.user-role{display:grid;gap:5px;font-size:13px}
+.user-form input,.user-form select,.user-role select{font:inherit;padding:9px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx);min-width:0}
+.user-rows{margin-top:10px}
+.user-row{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--bd)}
+.user-identity{display:grid;min-width:0;overflow-wrap:anywhere}
+.user-actions{display:flex;align-items:end;gap:8px}
+.user-role{min-width:140px}
+.user-role select:disabled{opacity:.75}
+.delete-user{padding:8px 10px}
+@media(max-width:480px){.user-row{align-items:flex-start;flex-direction:column}.user-actions{width:100%;align-items:end}.user-role{flex:1}.delete-user{flex:0 0 auto}}
+.drop{border:2px dashed var(--bd);border-radius:10px;padding:14px;text-align:center;margin-bottom:10px}
+.drop.h{border-color:var(--ac)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
